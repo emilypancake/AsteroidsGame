@@ -2,7 +2,6 @@ public class Spaceship extends Floater{
   
   public Spaceship(){
      corners = 12;
-     
      xCorners = new int[]{20, 16, 10, 4, -14, -14, -20, -14, -14, 4, 10, 16};
      yCorners = new int[]{0, 8, 10, 10, 24, 8, 0, -8, -24, -10, -10, -8};
      myColor = color(255, 255, 255);
@@ -19,17 +18,17 @@ public class Spaceship extends Floater{
     myYspeed = 0;
     turn(Math.random()*360);
   }
-  public void faster(){
-    myXspeed += 0.1;
-    myXspeed += 0.1;
-  }
-  public void zoomzoom(){
+  
+  public void forward(){
     accelerate(1);
+  }
+  public void backward(){
+    accelerate(-1);
   }
   
   public void resetloc(){
     myCenterX = (int)(Math.random()*width);
-     myCenterY = (int)(Math.random()*height);
+    myCenterY = (int)(Math.random()*height);
     
   }
   
