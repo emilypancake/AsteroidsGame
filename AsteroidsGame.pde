@@ -21,7 +21,7 @@ public void draw(){
     starfield[i].show();
   }
   for(int i = 0; i < asteroid.size(); i++){
-    if(dist((float)spaceship.getmyCenterX(), (float)spaceship.getmyCenterY(), (float)asteroid.get(i).getmyCenterX(), (float)asteroid.get(i).getmyCenterY()) < 20){
+    if(dist((float)spaceship.getmyCenterX(), (float)spaceship.getmyCenterY(), (float)asteroid.get(i).getmyCenterX(), (float)asteroid.get(i).getmyCenterY()) < 30){
       asteroid.remove(i);
       i--;
     }else{
