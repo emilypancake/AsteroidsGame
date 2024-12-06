@@ -23,6 +23,7 @@ public void draw(){
   for(int i = 0; i < asteroid.size(); i++){
     if(dist((float)spaceship.getmyCenterX(), (float)spaceship.getmyCenterY(), (float)asteroid.get(i).getmyCenterX(), (float)asteroid.get(i).getmyCenterY()) < 20){
       asteroid.remove(i);
+      i--;
     }else{
       asteroid.get(i).move();
       asteroid.get(i).show();
