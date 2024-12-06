@@ -22,5 +22,6 @@ header {
 	text-align: left;
 	font-style: italic;
 	font-size: 90%;
+	display: inline-block;
 }
 
