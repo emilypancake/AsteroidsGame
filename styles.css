@@ -15,8 +15,11 @@ body {
 header {
 	
 }
-
-footer {
+.centeredFooter {
+	text-align: center;
+}
+.centeredFooter footer {
+	text-align: left;
 	font-style: italic;
 	font-size: 90%;
 }
