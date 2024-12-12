@@ -32,55 +32,7 @@ public class Spaceship extends Floater{
     
   }
   
-  public int getCorners(){
-    return corners;
-  }
-  public int[] getxCorners(){
-    return xCorners;
-  }
-  public int[] getyCorners(){
-    return yCorners;
-  }
-  public int getmyColor(){
-    return myColor;
-  }
-  public double getmyCenterX(){
-    return myCenterX;
-  }
-  public double getmyCenterY(){
-    return myCenterY;
-  }
-  public double getmyXspeed(){
-    return myXspeed;
-  }
-  public double getmyYspeed(){
-    return myYspeed;
-  }
-  public double getmyPointDirection(){
-    return myPointDirection;
-  }
-  
-  public void setCorners(int a){
-    corners = a;
-  }
-  public void setxCorners(int[] a){
-    xCorners = a;
-  }
-  public void setyCorners(int[] a){
-    yCorners = a;
-  }
-  public void setmyColor(int a){
-    myColor = a;
-  }
-  public void setmyXspeed(int a){
-    myXspeed = a;
-  }
-  public void setmyYspeed(int a){
-    myYspeed = a;
-  }
-  public void setMyPointDirection(int a){
-    myPointDirection = a;
-  }
+  // All my Getters and Setters are in the floater program
   
   
   
