@@ -3,6 +3,7 @@ Spaceship spaceship = new Spaceship();
 Star[] starfield = new Star[200];
 ArrayList <Bullet> bullet = new ArrayList <Bullet>();
 ArrayList <Asteroid> asteroid = new ArrayList <Asteroid>();
+Health hp = new Health();
 
 public void setup(){
   size(500, 500);
@@ -10,19 +11,26 @@ public void setup(){
     starfield[i] = new Star();
   }
   
-  for(int i = 0; i < 20; i++){
+  for(int i = 0; i < 10; i++){
     asteroid.add(new Asteroid());
   }
   
 }
 public void draw(){
   background(0, 0, 0);
+  hp.show();
+  if(spaceship.getcrashes() > 9){
+    noLoop();
+  }
+  hp.show();
   
   for(int i = 0; i < starfield.length; i++){
     starfield[i].show();
   }
   for(int i = 0; i < asteroid.size(); i++){
     if(dist((float)spaceship.getmyCenterX(), (float)spaceship.getmyCenterY(), (float)asteroid.get(i).getmyCenterX(), (float)asteroid.get(i).getmyCenterY()) < 30){
+      spaceship.setcrashes(spaceship.getcrashes()+1);
+      hp.downhp();
       asteroid.remove(i);
       i--;
     }else{
