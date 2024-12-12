@@ -1,6 +1,7 @@
 //your variable declarations here
 Spaceship spaceship = new Spaceship();
 Star[] starfield = new Star[200];
+ArrayList <Bullet> bullet = new ArrayList <Bullet>();
 ArrayList <Asteroid> asteroid = new ArrayList <Asteroid>();
 
 public void setup(){
@@ -12,9 +13,9 @@ public void setup(){
   for(int i = 0; i < 20; i++){
     asteroid.add(new Asteroid());
   }
+  
 }
 public void draw(){
-  //your code here
   background(0, 0, 0);
   
   for(int i = 0; i < starfield.length; i++){
@@ -29,6 +30,28 @@ public void draw(){
       asteroid.get(i).show();
     }
   }
+  
+  
+  for(int i = 0; i < bullet.size(); i++){
+    for(int k = 0; k < asteroid.size(); k++){
+      if(dist((float)asteroid.get(k).getmyCenterX(), (float)asteroid.get(k).getmyCenterY(), (float)bullet.get(i).getmyCenterX(), (float)bullet.get(i).getmyCenterY()) < 37f){
+         bullet.remove(i);
+         asteroid.remove(k);
+         i--;
+         k--;
+         break;
+      }else if(bullet.get(i).getmyCenterX() == width || bullet.get(i).getmyCenterX() == 0 || bullet.get(i).getmyCenterY() == 0 || bullet.get(i).getmyCenterY() == height){
+        bullet.remove(i);
+        i--;
+        break;
+      }else{
+        bullet.get(i).move();
+        bullet.get(i).show();
+      }
+    }
+   
+  }
+  // version 2 end
   spaceship.move();
   spaceship.show();
 }
@@ -43,10 +66,15 @@ public void keyPressed(){
   //move and show always 
   //turn and accelerate soemtiesm
   if(key == 'l'){ 
-    spaceship.turn(3);
+    spaceship.turn(5);
   }
   if(key == 'r'){
-    spaceship.turn(-3);
+    spaceship.turn(-5);
+  }
+  if(key == ' '){
+    bullet.add(new Bullet(spaceship));
+    bullet.get(bullet.size()-1).forward();
+    
   }
   if(key == 'd'){
     spaceship.backward();
