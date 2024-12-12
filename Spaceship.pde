@@ -1,5 +1,5 @@
 public class Spaceship extends Floater{
-  
+  private int crashes;
   public Spaceship(){
      corners = 12;
      xCorners = new int[]{20, 16, 10, 4, -14, -14, -20, -14, -14, 4, 10, 16};
@@ -10,6 +10,7 @@ public class Spaceship extends Floater{
      myPointDirection = 0;
      myXspeed = 0;
      myYspeed = 0;
+     crashes = 0;
   }
   
   public void hyper(){
@@ -30,6 +31,12 @@ public class Spaceship extends Floater{
     myCenterX = (int)(Math.random()*width);
     myCenterY = (int)(Math.random()*height);
     
+  }
+   public int getcrashes(){
+    return crashes;
+  }
+  public void setcrashes(int a){
+    crashes = a;
   }
   
   // All my Getters and Setters are in the floater program
